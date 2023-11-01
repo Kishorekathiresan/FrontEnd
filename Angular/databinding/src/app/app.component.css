@@ -1,0 +1,22 @@
+.theme1{
+    color:aquamarine;
+    background-color: cadetblue;
+    font-size: 25px;
+}
+.theme2{
+    color: blanchedalmond;
+    background-color: color-mix(200, 189, 166);
+    font-size: 30px;
+}
+.theme3{
+    color: gold;
+    background-color: brown;
+    font-size: 40px;
+    border-style: 3px dotted;
+}
+.theme4{
+    color: black;
+    background-color: bisque;
+    font-size: 20px;
+    border-style: double;
+}

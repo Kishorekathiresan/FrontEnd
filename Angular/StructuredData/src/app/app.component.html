@@ -1,0 +1,38 @@
+First Name {{emp.firstName}}<br>
+Last Name {{emp.lastName}}<br>
+Age {{emp.age}}<br>
+Location {{emp.location}}<br>
+
+Your employee Id <input type="number"[(ngModel)]="emp.empId"/><br>
+Your first name <input type="text" [(ngModel)]="emp.firstName"/><br>
+Your last name <input type="text" [(ngModel)]="emp.lastName"/><br>
+Your Age <input type="numberf" [(ngModel)]="emp.age"/><br>
+Your location <input type="text" [(ngModel)]="emp.location"/><br>
+<!-- <input type="button" value="App data" (click)="emplist.push(emp)"/> -->
+<input type="button" value="App data" (click)="addEmp()"/><br>
+
+<table style="border:5px;border-style: dotted;">
+  <thead>
+  <td><b>Employee Id</b></td>
+  <td><b>First Name</b></td>
+  <td><b>Last Name</b></td>
+  <td><b>Age</b></td>
+  <td><b>Location</b></td></thead>
+  
+  <tr *ngFor="let i of emplist">
+    <td>{{i.empId}}</td>
+    <td>{{i.firstName}}</td>
+    <td>{{i.lastName}}</td>
+    <td>{{i.age}}</td>
+    <td>{{i.location}}</td>
+
+  </tr>
+
+</table>
+
+<br><input type="button" value="For Loops" (click)="forLoops()"/><br>
+<select [(ngModel)]="eId">
+  <option *ngFor="let empdata of emplist" value="{{empdata.empId}}">{{empdata.empId}}</option>
+</select><br>
+<input type="button" value="Delete" (click)="deleteEmp()"/>
+<router-outlet></router-outlet>

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style> 
+div
+{
+width:100px;
+height:100px;
+background:red;
+position:relative;
+animation:myfirst 5s linear 2s infinite alternate;
+/* Safari and Chrome: */
+-webkit-animation:myfirst 10s infinite alternate;
+}
+#p1
+{
+width:50px;
+height:50px;
+background:black;
+transform: translate(15px,15px);
+position:static;
+animation:mysecond 5s linear 2s infinite alternate;
+/* Safari and Chrome: */
+-webkit-animation:mysecond 10s infinite alternate;
+}
+
+@keyframes myfirst
+{
+0%   {background:red; left:0px; top:0px;}
+20%  {background:yellow; left:200px; top:0px;}
+40%  {background:blue; left:200px; top:200px;}
+55% {background:green; left:0px; top:0px;rotate: 360deg;}
+70%  {background:purple; left:0px; top:200px;}
+85%  {background:pink; left:200px; top:200px;}
+100% {background:black;left:0px; top:0px}
+}
+@keyframes mysecond
+{
+0%   {background:black; left:0px; top:0px;}
+20%  {background:pink; left:200px; top:0px;}
+40%  {background:purple; left:200px; top:200px;}
+55% {background:grey; left:0px; top:0px;}
+70%  {background:blue; left:0px; top:200px;}
+85%  {background:yellow; left:200px; top:200px;}
+100% {background:red;left:0px; top:0px;rotate:360deg;}
+}
+
+
+@-webkit-keyframes myfirst /* Safari and Chrome */
+{
+0%   {background:red; left:0px; top:0px;}
+25%  {background:yellow; left:200px; top:0px;}
+50%  {background:blue; left:200px; top:200px;}
+75%  {background:green; left:0px; top:200px;}
+100% {background:red; left:0px; top:0px;}
+}
+
+</style>
+</head>
+<body>
+
+<p><b>Note:</b> This example does not work in Internet Explorer 9 and earlier versions.</p>
+
+<div>
+    <div id="p1"></div>
+</div>
+
+</body>
+</html>
+

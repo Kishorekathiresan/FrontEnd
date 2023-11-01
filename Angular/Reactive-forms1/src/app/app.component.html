@@ -1,0 +1,12 @@
+
+<b>Enter your Details</b><br>
+<form [formGroup]="frmGroup" (ngSubmit)="processData()">
+  First name<input type="text" name="firstName" formControlName="firstName"/><br>
+  Last name<input type="text" name="lastName" formControlName="lastName"/><br>
+  Age<input type="number" name="age" formControlName="age"/><br>
+  Email<input type="email" name="email" formControlName="email"/><br>
+
+  <!-- <input type="checkbox" value={{frmGroup.valid}} [(ngModel)]="frmGroup.valid"/>Information<br> -->
+  <input type="submit" value="Save" [disabled]="!frmGroup.valid"/>
+</form>
+<router-outlet></router-outlet>

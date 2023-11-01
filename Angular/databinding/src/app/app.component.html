@@ -1,0 +1,109 @@
+<b>Personal Details</b><br>
+
+<b>First Name</b><input type="text" id="fn"[(ngModel)]="firstName" (blur)="verifyFirstName($event)"/><br>
+<b>Last Name</b><input type="text" [(ngModel)]="lastName"/><br>
+<b>Age</b><input type="number" [(ngModel)]="age"/><br>
+<b>Gender</b>&nbsp;&nbsp;<legend>
+<input type="radio" [(ngModel)]="gender" value="Male" name="gender"/>Male<br>
+<input type="radio" [(ngModel)]="gender" value="Female" name="gender"/>Female<br>
+</legend>
+<b>Choose your favourite 
+  color
+</b><br>
+<select size="4" [(ngModel)]="favColor">
+  <option value="red">Red</option>
+  <option value="violet">Violet</option>
+  <option value="indigo">Indigo</option>
+  <option value="silver">Silver</option>
+  <option value="gold">Gold</option>
+  <option value="yellow">Yellow/option>
+</select>
+<div [style.color]="favColor">
+  sample preview<br>
+  sample preview<br>
+  sample preview<br>
+</div>
+<br><input type="checkbox" [(ngModel)]="enabled"/><br>
+
+<div class="theme1">
+  Samples of themes<br>
+  Samples of themes<br>
+  Samples of themes<br>
+  Samples of themes<br>
+
+</div><br>
+<b>Your favourite theme</b>
+<select [(ngModel)]="favTheme">
+  <option value="theme1">Oceanic</option>
+  <option value="theme2">Indic</option>
+  <option value="theme3">Boulevard</option>
+  <option value="theme4">Reddington</option>
+</select>
+<div [class]="favTheme">
+  This is {{favTheme}} theme<br>
+  This is {{favTheme}} theme<br>
+  This is {{favTheme}} theme<br>
+  This is {{favTheme}} theme<br>
+</div>
+<input type="button" value="Save" [disabled] = "!enabled" (click)="save()"/>
+
+<p>preview</p>
+<div style="width:400px;height:100px">
+  Name :{{firstName}}&nbsp;&nbsp;{{lastName}}<br>
+  Age :{{age}}<br>
+  Gender :{{gender}}<br>
+  Favourite Color :{{favColor}}<br>
+  Enabled :{{enabled}}
+</div><br>
+<input type="checkbox" [value]="isDisplayed" [(ngModel)]="isDisplayed"/>Agree<br>
+<b *ngIf="isDisplayed"><button>Get Payment</button></b>
+<b *ngIf="!isDisplayed">Please agree to Terms and Conditions first</b>
+
+<!--Using if else-->
+<br><br>
+<div>
+<input type="checkbox" [value]="YesNo" [(ngModel)]="YesNo"/>Agree to Terms<br>
+<b *ngIf="YesNo; else dontshow"><button>Do payment</button></b>
+<ng-template #dontshow><b>Please agree</b></ng-template><br><br>
+
+<!-- <b *ngIf="100<200;else notless">100 less than 200</b>
+<ng-template #notless><b>100 not less than 200</b></ng-template> -->
+
+Your salary<input type="number" [(ngModel)]="salary"/>
+<br><br><b *ngIf="salary >=20000 && salary<=100000;else minsal">Salary is meeting the standards</b>
+<ng-template #minsal><b>Salary not meeting the standards</b></ng-template><br><br>
+
+<b>Total # of Employees</b>{{name.length}}
+<ol  type="a">
+  <li *ngFor="let names of name">{{names}}</li><br>
+  <li *ngFor="let names of name.reverse()">{{names}}</li><br>
+  <li *ngFor="let names of name.sort()">{{names}}</li>
+</ol>
+</div>
+
+<b>List of cities</b><br>
+<select size="1" [(ngModel)]="location">
+  <option value="Hyderabad">Nizam's city</option>
+  <option value="Vijayawada">Traditional city</option>
+  <option value="Bangalore">Electronic city</option>
+  <option value="chennai">Classical city</option>
+  <option value="Jaipur">Pink city</option>  
+</select><br>
+
+<p [ngSwitch]="location">
+  <b *ngSwitchCase="'Hyderabad'">Your Location is Nizam's city</b>
+  <b *ngSwitchCase="'Vijayawada'">Your Location is Traditional city</b>
+  <b *ngSwitchCase="'Bangalore'">Your Location is Electronic city</b>
+  <b *ngSwitchCase="'chennai'">Your Location is Classical city</b>
+  <b *ngSwitchCase="'Jaipur'">Your Location is Pink city</b>
+  <b *ngSwitchDefault>Your Location is Different city</b>
+</p>
+
+<input type="checkbox" [(ngModel)]="background"/>want a background color?
+<div style="width:400px;height:70px" [style.backgroundColor]="background?'red':'yellow'" [style.color]="background?'silver':'blue'">
+<b>Background background background</b><br>
+<b>Background background background</b><br>
+<b>Background background background</b><br>
+<b>Background background background</b><br>
+</div>
+<router-outlet></router-outlet>

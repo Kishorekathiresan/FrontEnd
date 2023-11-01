@@ -1,0 +1,23 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+        <b>Please sign in to proceed further</b><br>
+        <form (ngSubmit)="addAUser()">
+            <legend>
+                User ID<input type="text" name="userid" [(ngModel)]="user.userid" placeholder="Enter your user id"/><br><br>
+                Password<input type="password" name="password" [(ngModel)]="user.password" placeholder="Enter your password"/><br><br>
+                Email<input type="email" name="emailId" [(ngModel)]="user.emailId" placeholder="Enter your mail id"/><br><br>
+            </legend>
+            <legend>
+                <input type="submit" value="Add User"/>&nbsp;&nbsp;<input type="reset" value="Reset"/>
+            </legend>
+        </form>
+</body>
+</html>
+<router-outlet></router-outlet>
